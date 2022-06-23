@@ -8,5 +8,7 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-      - run: python main.py
+          cache: 'pipenv'
+      - run: pipenv install
       - run: pytest 
+      - run: python main.py
