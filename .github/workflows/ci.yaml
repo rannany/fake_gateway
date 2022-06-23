@@ -12,5 +12,6 @@ jobs:
           python-version: '3.9'
           cache: 'pipenv'
       - run: pipenv install
-      - run: pytest 
       - run: python main.py
+      - name: GitHub Action for pytest
+        uses: cclauss/GitHub-Action-for-pytest@0.5.0
