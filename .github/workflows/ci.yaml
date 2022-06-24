@@ -6,13 +6,16 @@ on:
 jobs:
   check-application:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python:[ '3.9', '3.8' ]
     steps:
       - uses: actions/checkout@v3
       - name: Intall pipenv
         run: pipx install pipenv
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: ${{matrix.python}}
           cache: 'pipenv'
       - run: pipenv install
       - run: python main.py
