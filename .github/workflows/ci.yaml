@@ -15,5 +15,4 @@ jobs:
           python-version: '3.9'
           cache: 'pipenv'
       - run: pipenv install pytest
-      - run: python -m pytest
       - run: python main.py
